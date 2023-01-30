@@ -1,27 +1,51 @@
 function plus(string1, string2) {
-    const result = Number(string1) + Number(string2);
-    return console.log(result.toString());
+    if (typeof string1 === "bigint" || typeof string2 === "bigint") {
+        const bigIntResult = string1 + string2
+        return console.log(bigIntResult);
+    } else {
+        const result = Number(string1) + Number(string2);
+        return console.log(result.toString());
+    }
 }
 
 function minus(string1, string2) {
-    const result = Number(string1) - Number(string2);
-    if (result < 0) {
-        return console.log('First argument must be greater than second one.');
+    if (typeof string1 === "bigint" || typeof string2 === "bigint") {
+        const bigIntResult = string1 - string2
+        if (bigIntResult < 0) {
+            return console.log('First argument must be greater than second one.');
+        }
+        return console.log(bigIntResult);
+    } else {
+        const result = Number(string1) - Number(string2);
+        if (result < 0) {
+            return console.log('First argument must be greater than second one.');
+        }
+        return console.log(result.toString());
     }
-    return console.log(result.toString());
 }
 
 function divide(string1, string2) {
-    if (string2 == 0) {
-        return console.log('Second argument must be other than 0.');
+    if (typeof string1 === "bigint" || typeof string2 === "bigint") {
+        const bigIntResult = string1 / string2
+        if (string2 == 0) {
+            return console.log('Second argument must be other than 0.');
+        }
+        return console.log(bigIntResult);
+    } else {
+        const result = Number(string1) / Number(string2);
+        return console.log(result.toString());
     }
-    const result = Number(string1) / Number(string2);
-    return console.log(result.toString());
 }
 
 function multiply(string1, string2) {
-    const result = Number(string1) * Number(string2);
-    return console.log(result.toString());
+    if (typeof string1 === "bigint" || typeof string2 === "bigint") {
+        const bigIntResult = string1 * string2;
+        return console.log(bigIntResult);
+        } else {
+
+        const result = Number(string1) * Number(string2);
+        return console.log(result.toString());
+    }
 }
 
 function calc(string1, string2, callback) {
