@@ -1,9 +1,9 @@
 function plus(string1, string2) {
     if (typeof string1 === "bigint" || typeof string2 === "bigint") {
-        const bigIntResult = string1 + string2
+        const bigIntResult = string1 + string2;
         return console.log(bigIntResult);
-    } else {
-        const result = Number(string1) + Number(string2);
+    } else if (string1){
+        const result = BigInt(string1) + BigInt(string2);
         return console.log(result.toString());
     }
 }
@@ -16,7 +16,7 @@ function minus(string1, string2) {
         }
         return console.log(bigIntResult);
     } else {
-        const result = Number(string1) - Number(string2);
+        const result = BigInt(string1) - BigInt(string2);
         if (result < 0) {
             return console.log('First argument must be greater than second one.');
         }
@@ -32,7 +32,7 @@ function divide(string1, string2) {
         }
         return console.log(bigIntResult);
     } else {
-        const result = Number(string1) / Number(string2);
+        const result = BigInt(string1) / BigInt(string2);
         return console.log(result.toString());
     }
 }
@@ -43,7 +43,7 @@ function multiply(string1, string2) {
         return console.log(bigIntResult);
         } else {
 
-        const result = Number(string1) * Number(string2);
+        const result = BigInt(string1) * BigInt(string2);
         return console.log(result.toString());
     }
 }
@@ -53,6 +53,7 @@ function calc(string1, string2, callback) {
 }
 
 const calcResult = calc('15', '20', multiply);
+
 // In variable above (calcResult) you need to provide three parameters :
 // Number in a string format (x2) instead of '15' and '20' (calc), that's only examples.
 // Then choose one of arithmetic expressions : plus, minus, divide or multiply.
