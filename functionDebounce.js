@@ -13,7 +13,7 @@ function sayHello() {
 
 const rafael = {
     name: 'rafael',
-    speak: debounce(sayHello, 0),
+    speak: debounce(sayHello, 1000),
 }
 
 rafael.speak()
